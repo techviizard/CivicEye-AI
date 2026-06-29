@@ -1,32 +1,37 @@
 # CivicEye-AI
 
-                    User Report
-                         │
-                         ▼
-            📷 Vision Analysis Agent
-     (Analyzes uploaded image using Gemini Vision)
-                         │
-                         ▼
+                                    User Reports Issue
+                       │
+                       ▼
+             📷 Vision Analysis Agent
+        (Analyzes uploaded image)
+                       │
+                       ▼
           🧠 Issue Intelligence Agent
- (Combines title + description + image analysis)
-                         │
-            ┌────────────┼────────────┐
-            ▼            ▼            ▼
-   🔍 Duplicate     ⚡ Priority     🛠 Resolution
- Detection Agent      Agent          Agent
-            │            │            │
-            └────────────┼────────────┘
+ (Combines title + description + vision result)
+                       │
+                       ▼
+        🔍 Duplicate Detection Agent
+      (Checks similar nearby reports)
+                       │
+             Duplicate?
+            /          \
+         Yes            No
+         │               │
+Suggest support      Save Report
+existing report          │
                          ▼
-          ✔ Verification Agent
+                Firestore Database
+                         │
+        ┌────────────────┼────────────────┐
+        ▼                ▼                ▼
+Community        Resolution Agent    Dashboard
+Verification            │
+        │               ▼
+        └────────► Status Updates
                          │
                          ▼
-                Save to Firestore
+         📈 Prediction Agent
                          │
                          ▼
-               Dashboard + Maps
-                         │
-                         ▼
-          📈 Prediction Agent
-                         │
-                         ▼
-        📄 Executive Summary Agent
+         📄 Executive Summary Agent
